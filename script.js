@@ -79,3 +79,43 @@ const timelineObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 timelineObserver.observe(timeline);
+
+/* --- GENERER FLERE RUNER AUTOMATISK --- */
+const runeImages = [
+  "Images/precision.png",
+  "Images/domination.png",
+  "Images/sorcery.png",
+  "Images/resolve.png",
+  "Images/inspiration.png"
+];
+
+const runeContainer = document.getElementById("rune-container");
+
+function createRune() {
+  const rune = document.createElement("div");
+  rune.classList.add("rune");
+
+  // Tilfeldig runeikon
+  rune.style.backgroundImage = `url(${runeImages[Math.floor(Math.random() * runeImages.length)]})`;
+
+  // Tilfeldig størrelse (mer variasjon)
+  const size = Math.floor(Math.random() * 80) + 60; // 60–140px
+  rune.style.width = `${size}px`;
+  rune.style.height = `${size}px`;
+
+  // Bredere spredning over hele skjermen
+  rune.style.top = `${Math.random() * 120 - 10}%`;   // kan gå litt utenfor toppen
+  rune.style.left = `${Math.random() * 120 - 10}%`;  // kan gå litt utenfor venstre kant
+
+  // Raskere animasjoner, mer variasjon
+  rune.style.animationDuration = `${6 + Math.random() * 6}s`; // 6–12s
+
+  // Sett inn i container
+  runeContainer.appendChild(rune);
+}
+
+
+// Generer 18 runer
+for (let i = 0; i < 30; i++) {
+  createRune();
+}
