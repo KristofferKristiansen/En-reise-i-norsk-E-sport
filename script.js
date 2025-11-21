@@ -119,3 +119,22 @@ function createRune() {
 for (let i = 0; i < 30; i++) {
   createRune();
 }
+
+const backToTopBtn = document.getElementById("back-to-top");
+
+// Vis knappen når man scroller ned
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    backToTopBtn.classList.add("visible");
+  } else {
+    backToTopBtn.classList.remove("visible");
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  setTimeout(() => {
+    location.reload();
+  }, 2000); // litt delay for smoothe scroll
+});

@@ -266,3 +266,96 @@ article {
 .node:hover .tooltip {
   opacity: 1;
 }
+
+/* --- TIL TOPPEN-KNAPP --- */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 52px;
+  height: 52px;
+
+  background: rgba(25, 35, 55, 0.8);
+  border: 2px solid #3b82f6;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+
+  color: #e4e9f5;
+  font-size: 28px;
+  font-weight: bold;
+
+  cursor: pointer;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+
+  box-shadow: 0 0 8px #3b82f6, 0 0 18px rgba(59,130,246,0.5);
+}
+
+/* Når synlig */
+#back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background: rgba(40, 55, 85, 0.9);
+  box-shadow: 0 0 12px #3b82f6, 0 0 28px rgba(59,130,246,0.7);
+}
+
+/* --- FOOTER  --- */
+.site-footer {
+  margin-top: 6rem;
+  background: #0b1018;
+  padding: 4rem 2rem 3rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  color: #c9d2e4;
+  text-align: center;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Seksjonstitler */
+.footer-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: #e6ebf5;
+  text-shadow:
+    0 0 8px rgba(59, 130, 246, 0.35),
+    0 0 14px rgba(59, 130, 246, 0.15);
+}
+
+/* Seksjonstekst */
+.footer-section p {
+  line-height: 1.8;
+  color: #aab4c7;
+  font-size: 1rem;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* Bunntekst */
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #8f9ab1;
+  margin: 0;
+}
