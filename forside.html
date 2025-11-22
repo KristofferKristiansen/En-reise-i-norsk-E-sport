@@ -3,63 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prosjektoversikt</title>
+    <title>Forside – Fire historier</title>
     <link rel="stylesheet" href="forside.css">
 </head>
 
 <body>
 
 <header class="hero-banner">
-    <div class="banner-bg"></div>
-    <div class="banner-overlay"></div>
+    <div class="hero-overlay"></div>
 
-    <div class="banner-content">
-        <h1>Prosjektoversikt</h1>
-        <p>Informasjonstekst?</p>
+    <div class="hero-content">
+        <h1 class="hero-title">Fire historier. Én virkelighet.</h1>
+        <p class="hero-subtitle">Utforsk fortellinger om gaming, press, utenforskap og utvikling.</p>
+
+        <!-- KNAPP SOM ÅPNER ARTIKKLENE -->
+        <button id="showArticles" class="hero-button">Utforsk tekstene</button>
     </div>
+
+    <canvas id="particleCanvas"></canvas>
 </header>
 
-<main>
-    <section class="card-list">
+<main id="articleSection" class="hidden">
 
-        <article class="card">
-            <div class="card-image" style="background-image:url('Images/IMG_5398.jpeg')"></div>
-            <div class="card-content">
-                <h2>Level Up</h2>
-                <p>Historien om Syver Saxruds utvikling innenfor norsk E-sport.</p>
-                <a href="index.html" class="btn">Les mer</a>
+    <!-- STORT HOVEDKORT -->
+    <section id="articles" class="featured-card">
+        <a href="cs_trading.html" class="featured-link">
+            <div class="featured-bg" style="background-image:url('Images/cs_trading.jpg');"></div>
+            <div class="featured-content">
+                <h2>CS:GO, Trading og En Digital Virkelighetsflukt</h2>
+                <p>En dypdykkende historie om økonomi, press og identitet i et av verdens største spillmiljøer.</p>
             </div>
-        </article>
+        </a>
+    </section>
 
-        <article class="card">
-            <div class="card-image" style="background-image:url('images/esport-temp.jpg')"></div>
-            <div class="card-content">
-                <h2>AI og Lærer</h2>
-                <p>AI utvikling innenfor skole.</p>
-                <a href="#" class="btn">Kommer snart</a>
-            </div>
-        </article>
+    <!-- TRE MINDRE KORT UNDER -->
+    <section id="articles" class="article-grid-small">
 
-        <article class="card">
-            <div class="card-image" style="background-image:url('images/trening-temp.jpg')"></div>
-            <div class="card-content">
-                <h2>CS trading</h2>
-                <p>Fra piksler til husleie</p>
-                <a href="#" class="btn disabled">Kommer snart</a>
+        <a href="index.html" class="small-card">
+            <div class="small-bg" style="background-image:url('Images/IMG_5398.jpeg');"></div>
+            <div class="small-content">
+                <h3>Syver Saxrud</h3>
+                <p>Fra spiller til trener – en reise gjennom læring og ledelse.</p>
             </div>
-        </article>
+        </a>
 
-        <article class="card">
-            <div class="card-image" style="background-image:url('images/future-temp.jpg')"></div>
-            <div class="card-content">
-                <h2>Flukt fra virkeligheten</h2>
-                <p>Gaming og flukt fra den virkelige verden.</p>
-                <a href="glen.html" class="btn">Les mer</a>
+        <a href="glen.html" class="small-card">
+            <div class="small-bg" style="background-image:url('Images/glen3.jpeg');"></div>
+            <div class="small-content">
+                <h3>Glen Sundell</h3>
+                <p>Gaming som flukt fra virkeligheten og kampen for balanse.</p>
             </div>
-        </article>
+        </a>
+
+        <a href="tekst3.html" class="small-card">
+            <div class="small-bg" style="background-image:url('Images/placeholder1.jpg');"></div>
+            <div class="small-content">
+                <h3>Tekst 3</h3>
+                <p>En historie om ungdom, press og identitet.</p>
+            </div>
+        </a>
 
     </section>
 </main>
+
 
 <footer>
     <p>© 2025 – Prosjektoversikt for journalistikk og mediefag</p>

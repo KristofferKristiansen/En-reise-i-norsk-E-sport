@@ -10,32 +10,85 @@ body {
     background: #d7dbe4;  /* mørkere, kjølig gråtone */
     color: #1f1f1f;
 }
-
-/* --- NYTT HERO-BANNER --- */
+/* =========================
+   EPIC BANNER / HERO HEADER
+   ========================= */
 
 .hero-banner {
     position: relative;
+    height: 100vh;
     width: 100%;
-    height: 340px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 
-    background: #cfd5df;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    background: radial-gradient(circle at 30% 20%, #2c2c54, #1a1a2e, #0f0f16);
+    animation: bgMove 12s ease-in-out infinite alternate;
 }
 
-.banner-bg {
+@keyframes bgMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 80%; }
+}
+
+/* Overlay glow */
+.hero-overlay {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.8);
+    background: linear-gradient(120deg, rgba(80,90,200,0.30), rgba(0,0,0,0.6));
+    mix-blend-mode: soft-light;
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 1rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(120,140,255,0.7);
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #d0d0dd;
+    letter-spacing: 0.3px;
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: rgba(120,130,255,0.4);
+    color: #fff;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: 0.3s ease;
+}
+
+.hero-button:hover {
+    background: rgba(120,130,255,0.7);
+    transform: translateY(-4px);
+}
+
+/* PARTICLES */
+#particleCanvas {
+    position: absolute;
+    inset: 0;
     z-index: 1;
 }
+
 
 /* Lys overlay med gradient */
 .banner-overlay {
@@ -175,4 +228,195 @@ footer {
     color: #4b5563;
     background: #c4cada;
     border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ====== GRID ====== */
+.article-grid {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* ====== EPIC CARD ====== */
+.epic-card {
+    position: relative;
+    height: 320px;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.7s ease;
+}
+
+/* fade-in når elementet blir synlig */
+.epic-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* bakgrunnsbilde */
+.card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    transition: 0.8s ease;
+}
+
+/* hover-effekt */
+.epic-card:hover .card-bg {
+    transform: scale(1.15);
+    filter: brightness(0.9);
+}
+
+/* tekstinnhold */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    padding: 1.6rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.card-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+    text-shadow: 0 0 8px #000;
+}
+
+.card-content p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* litt neon glow rundt kortet */
+.epic-card:hover {
+    box-shadow: 0 0 20px rgba(140,160,255,0.4), 0 0 40px rgba(120,140,255,0.25);
+}
+
+.hidden {
+    display: none;
+}
+
+/* ============================
+   FEATURED MAIN CARD (BIG)
+============================ */
+
+.featured-card {
+    max-width: 930px;
+    margin: 4rem auto 3rem auto;
+    padding: 0 1rem;
+}
+
+.featured-link {
+    position: relative;
+    display: block;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(120,140,255,0.25);
+    transition: 0.5s ease;
+}
+
+.featured-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+    transition: 0.7s ease;
+}
+
+.featured-link:hover .featured-bg {
+    transform: scale(1.15);
+    filter: brightness(0.8);
+}
+
+.featured-content {
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+}
+
+.featured-content h2 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.featured-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ============================
+   SMALL ARTICLE CARDS (3 PIECES)
+============================ */
+
+.article-grid-small {
+    max-width: 1200px;
+    margin: 2rem auto 5rem auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.small-card {
+    position: relative;
+    height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.8s ease;
+}
+
+.small-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.small-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.55);
+    transition: 0.7s ease;
+}
+
+.small-card:hover .small-bg {
+    transform: scale(1.15);
+    filter: brightness(0.85);
+}
+
+.small-content {
+    position: absolute;
+    bottom: 0;
+    padding: 1.4rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+}
+
+.small-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.small-content p {
+    font-size: 1rem;
+    opacity: 0.85;
 }
