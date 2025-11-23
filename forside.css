@@ -82,8 +82,8 @@ body {
 #particleCanvas {
     position: fixed;
     inset: 0;
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
     pointer-events: none;
 }
@@ -177,9 +177,10 @@ body {
 footer {
     text-align: center;
     padding: 2.5rem 1rem;
-    color: #4b5563;
-    background: #c4cada;
+    color: #d1d5db;
+    background: transparent;
     border-top: 1px solid rgba(0,0,0,0.08);
+    text-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
 
 /* ====== GRID ====== */
