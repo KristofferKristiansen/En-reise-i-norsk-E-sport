@@ -59,29 +59,20 @@ const showBtn = document.getElementById("showArticles");
 const articleSection = document.getElementById("articleSection");
 
 showBtn.addEventListener("click", () => {
-    // Fjern hidden
+
     articleSection.classList.remove("hidden");
 
-    // Sett hash slik at “Til forsiden”-knappen går hit
     window.location.hash = "#articles";
 
     // Smooth scroll
     setTimeout(() => {
         articleSection.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    }, 200);
 });
-
-/* ================================
-   LOAD PAGE DIRECTLY TO ARTICLES
-================================= */
 
 if (window.location.hash === "#articles") {
     articleSection.classList.remove("hidden");
 }
-
-/* ================================
-   FADE-IN SMALL CARDS
-================================= */
 
 const smallCards = document.querySelectorAll(".small-card");
 

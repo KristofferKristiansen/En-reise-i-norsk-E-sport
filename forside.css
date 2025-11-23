@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #d7dbe4;
+    background: radial-gradient(circle at 30% 20%, #2c2c54, #1a1a2e, #0f0f16);
     color: #1f1f1f;
 }
 
@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle at 30% 20%, #2c2c54, #1a1a2e, #0f0f16);
+    background: transparent;
     animation: bgMove 12s ease-in-out infinite alternate;
 }
 
@@ -80,9 +80,12 @@ body {
 
 /* PARTICLES */
 #particleCanvas {
-    position: absolute;
+    position: fixed;
     inset: 0;
-    z-index: 1;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* --- KORT I FULL BREDDE (VERTIKALE) --- */
