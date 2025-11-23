@@ -176,11 +176,12 @@ body {
 /* --- FOOTER --- */
 footer {
     text-align: center;
-    padding: 2.5rem 1rem;
+    padding: 3.5rem 1.5rem;
     color: #d1d5db;
     background: transparent;
     border-top: 1px solid rgba(0,0,0,0.08);
     text-shadow: 0 0 6px rgba(0,0,0,0.6);
+    line-height: 2;   
 }
 
 /* ====== GRID ====== */
